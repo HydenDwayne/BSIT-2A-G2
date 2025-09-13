@@ -180,12 +180,31 @@
 
     .week-row {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(5, 1fr);
       gap: 20px;
-      width: 100%;
-      max-width: 1400px;
-      margin-bottom: 40px; /* spacing between weeks */
+      margin-bottom: 40px; /* space between weeks */
     }
+
+    .day {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 15px;
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .day:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .day h2 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: white;
+      text-align: center;
+    }
+
   </style>
 </head>
 <body>
@@ -193,213 +212,12 @@
   <!-- Title -->
   <h1 class="page-title">BSIT 2A-G2 Midterm Week Schedule</h1>
 
-  <!-- Week 1 -->
-  <div class="week-row">
-    <!-- Monday -->
-    <div class="day">
-      <h2>Monday | Sept. 15</h2>
-    </div>
-    
-    <!-- Tuesday -->
-    <div class="day">
-      <h2>Tuesday | Sept. 16</h2>
-      <!-- RLW -->
-      <div class="subject-card">
-        <div class="subject-header">
-          RLW 101 | Life and Works of Rizal
-          <a href="https://drive.google.com/drive/folders/1U1Ge9wJYxkw3W8_TmmXBseAZj8p-6DEO?usp=drive_link" target="_blank" class="chip-link">Materials</a>
-        </div>
-        <div class="subject-content">
-          <div class="datetime">Sept 16 | 5:00 - 8:00pm</div>
-          <div class="course">F2F, Written Exam</div>
-          <div class="coverage">
-            <br>
-            • Study of Rizal<br>
-            • Rizal Law
-          </div>
-        </div>
-      </div>
-      <!-- Networking -->
-      <div class="subject-card">
-        <div class="subject-header">
-          IT 204 | Networking 1
-          <a href="https://drive.google.com/drive/folders/14TumV_W-mtNQjExHeFsFAbraasX9aeLI?usp=drive_link" target="_blank" class="chip-link">Materials</a>
-        </div>
-        <div class="subject-content">
-          <div class="datetime">Sept 16 | 9:00 - 11:00am</div>
-          <div class="course">F2F, Written Exam</div>
-          <div class="coverage">
-            <br>
-            • Chapter I - Introduction to Networking<br>
-            • Chapter II - Networking Basics<br>
-            • Chapter III - Network Fundamentals
-          </div>
-        </div>
-      </div>
-    </div>
+  <!-- Dynamic schedule will be injected here -->
+  <!--<div class="schedule" id="schedule-container"></div>-->
+  <div id="schedule-container"></div>
 
-    <!-- Wednesday -->
-    <div class="day">
-      <h2>Wednesday | Sept. 17</h2>
-      <!-- DSA -->
-      <div class="subject-card">
-        <div class="subject-header">
-          CC 105 | Data Structures and Algorithms
-          <a href="https://drive.google.com/drive/folders/1C-kyEbdfmq6daNzRprRUXZPGabdwzq4-?usp=drive_link" target="_blank" class="chip-link">Materials</a>
-        </div>
-        <div class="subject-content">
-          <div class="datetime">Sept 17 | 7:00 - 10:00am</div>
-          <div class="course">F2F, Hands-on Exam</div>
-          <div class="coverage">
-            <br>
-            • OOP (Classes, Objects, Encapsulation, Getter, Setter)<br>
-            • LinkedList
-          </div>
-        </div>
-      </div>
-      <!-- Info Management -->
-      <div class="subject-card">
-        <div class="subject-header">
-          CC 106 | Information Management
-          <a href="https://drive.google.com/drive/folders/1rPHRNYTsHq0zvohTivq4PShTLgvX_yWQ?usp=drive_link" target="_blank" class="chip-link">Materials</a>
-        </div>
-        <div class="subject-content">
-          <div class="datetime">Sept 17 | 10:00 - 1:00pm</div>
-          <div class="course">F2F, MS Teams Exam</div>
-          <div class="coverage">
-            <br>
-            • Intro to Information Management<br>
-            • Data Models<br>
-            • Data Modeling in the Organization<br>
-            • The Relational Data Model (RDM)
-          </div>
-        </div>
-      </div>
-      <!-- STS -->
-      <div class="subject-card">
-        <div class="subject-header">
-          STS 101 | Science, Technology, and Society
-          <a href="https://drive.google.com/drive/folders/1uglFWwLrtmNT3qKO7VQqfRgix9vi0k71?usp=drive_link" target="_blank" class="chip-link">Materials</a>
-        </div>
-        <div class="subject-content">
-          <div class="datetime">Sept 15 | 5:00 - 6:30pm</div>
-          <div class="course">F2F, Written Exam</div>
-          <div class="coverage">
-            <br>
-            • Introduction of STS (Science)<br>
-            • Ancient, Middle, and Modern Ages<br>
-            • The Good Life
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Thursday -->
-    <div class="day">
-      <h2>Thursday | Sept. 18</h2>
-    </div>
-
-    <!-- Friday -->
-    <div class="day">
-      <h2>Friday | Sept. 19</h2>
-      <!-- PE -->
-      <div class="subject-card">
-        <div class="subject-header">
-          PE 12 | PATHFit 3
-          <a href="https://drive.google.com/drive/folders/1iCEpEW90KT7_EEyZe1omGt9l77nzOdx7?usp=drive_link" target="_blank" class="chip-link">Materials</a>
-        </div>
-        <div class="subject-content">
-          <div class="datetime">Sept 19 | 7:00 - 9:00am</div>
-          <div class="course">F2F, Written Exam</div>
-          <div class="coverage">
-            <br>
-            • History and rules of basketball<br>
-            • Basic Position in basketball
-          </div>
-        </div>
-      </div>
-      <!-- Ethics -->
-      <div class="subject-card">
-        <div class="subject-header">
-          ETH 101
-          <a href="https://drive.google.com/drive/folders/1u3YJ1Dr1zKzOl69OgmnhL7G221bGHZ_H?usp=drive_link" target="_blank" class="chip-link">Materials</a>
-        </div>
-        <div class="subject-content">
-          <div class="datetime">Sept 19 | 10:00 - 1:00pm</div>
-          <div class="course">F2F, Written Exam</div>
-          <div class="coverage">
-            <br>
-            • Course description (Definition/Importance of Ethics)<br>
-            • Doing Philosophy
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Week 2 -->
-  <div class="week-row">
-    <!-- Monday / Tuesday -->
-    <div class="day">
-      <h2>Monday | Sept. 22</h2>
-      <div class="subject-card">
-        <div class="subject-header">
-          IT 203 | OOP
-          <a href="https://drive.google.com/drive/folders/1z1AWgDjAnbltv_43W5PGLWqe9dm72EQC?usp=drive_link" target="_blank" class="chip-link">Materials</a>
-        </div>
-        <div class="subject-content">
-          <div class="datetime">Sept 22 | 7:00 - 10:00am</div>
-          <div class="course">F2F, Written with Codes</div>
-          <div class="coverage">
-            <br>
-            • Methods & Access Modifier<br>
-            • Method Overloading<br>
-            • Constructors<br>
-            • Encapsulation<br>
-            • Inheritance
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tuesday -->
-    <div class="day">
-      <h2>Tuesday | Sept. 23</h2>
-    </div>
-
-    <!-- Wednesday -->
-    <div class="day">
-      <h2>Wednesday | Sept. 24</h2>
-    </div>
-
-    <!-- Thursday -->
-    <div class="day">
-      <h2>Thursday | Sept. 25</h2>
-      <div class="subject-card">
-        <div class="subject-header">
-          IT 205 | Quantitative Methods
-          <a href="https://drive.google.com/drive/folders/1Ykh2WrRHoAhE73ByJm3FQGdKWCMJALnr?usp=drive_link" target="_blank" class="chip-link">Materials</a>
-        </div>
-        <div class="subject-content">
-          <div class="datetime">Sept 25 | 5:00 - 8:00pm</div>
-          <div class="course">Online, MS Teams, Case-based Exam</div>
-          <div class="coverage">
-            <br>
-            • Quantitative Methods (Intro)<br>
-            • Linear Programming (Intro, Model, Problems)<br>
-            • Transportation Problems (Vogel Method)
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Friday -->
-    <div class="day">
-      <h2>Friday | Sept. 26</h2>
-    </div>
-
-  </div>
 </div>
+
 
 <script>
   // Dropdown toggle for each subject card
@@ -408,6 +226,97 @@
       card.classList.toggle('active');
     });
   });
+
+  // https://docs.google.com/spreadsheets/d/e/2PACX-1vShKMzttAo5BBWs4B7QG-JpKDpOduW_6QRI7Fdbt501sIrG6pnPa4NlmXFkJFTvNV1fXUhA1IfRdlqW/pub?gid=0&single=true&output=tsv
 </script>
+
+<script>
+  const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vShKMzttAo5BBWs4B7QG-JpKDpOduW_6QRI7Fdbt501sIrG6pnPa4NlmXFkJFTvNV1fXUhA1IfRdlqW/pub?gid=0&single=true&output=tsv";
+
+  const weeks = [
+    [
+      { label: "Monday | Sept. 15", date: "Sept. 15" },
+      { label: "Tuesday | Sept. 16", date: "Sept. 16" },
+      { label: "Wednesday | Sept. 17", date: "Sept. 17" },
+      { label: "Thursday | Sept. 18", date: "Sept. 18" },
+      { label: "Friday | Sept. 19", date: "Sept. 19" }
+    ],
+    [
+      { label: "Monday | Sept. 22", date: "Sept. 22" },
+      { label: "Tuesday | Sept. 23", date: "Sept. 23" },
+      { label: "Wednesday | Sept. 24", date: "Sept. 24" },
+      { label: "Thursday | Sept. 25", date: "Sept. 25" },
+      { label: "Friday | Sept. 26", date: "Sept. 26" }
+    ]
+  ];
+
+  async function loadSchedule() {
+    const response = await fetch(sheetUrl);
+    const data = await response.text();
+
+    // Parse CSV
+    const rows = data.trim().split("\n").map(r => r.split("\t"));
+    const headers = rows.shift();
+
+    const scheduleContainer = document.getElementById("schedule-container");
+    scheduleContainer.innerHTML = "";
+
+    // Build weeks
+    weeks.forEach(week => {
+      const weekRow = document.createElement("div");
+      weekRow.classList.add("week-row");
+
+      week.forEach(dayObj => {
+        const dayDiv = document.createElement("div");
+        dayDiv.classList.add("day");
+        dayDiv.setAttribute("data-date", dayObj.date);
+        dayDiv.innerHTML = `<h2>${dayObj.label}</h2>`;
+        weekRow.appendChild(dayDiv);
+      });
+
+      scheduleContainer.appendChild(weekRow);
+    });
+
+    // Place subjects
+    rows.forEach(activity => {
+      const subject = activity[headers.indexOf("Subject")]?.trim();
+      const desc = activity[headers.indexOf("Description")]?.trim();
+      const date = activity[headers.indexOf("Date")]?.trim();
+      const time = activity[headers.indexOf("Time")]?.trim();
+      const course = activity[headers.indexOf("Course")]?.trim();
+      const coverage = activity[headers.indexOf("Coverage")]?.trim();
+      const materials = activity[headers.indexOf("Materials Link")]?.trim();
+
+      const targetDay = document.querySelector(`.day[data-date="${date}"]`);
+
+      if (targetDay) {
+        const card = document.createElement("div");
+        card.className = "subject-card";
+
+        card.innerHTML = `
+          <div class="subject-header">
+            ${subject} ${desc ? `| ${desc}` : ""}
+            ${materials ? `<a href="${materials}" target="_blank" class="chip-link">Materials</a>` : ""}
+          </div>
+          <div class="subject-content">
+            <div class="datetime">${date} | ${time}</div>
+            <div class="course">${course}</div>
+            <div class="coverage"><br>${coverage.replace(/;/g,"<br>")}</div>
+          </div>
+        `;
+
+        targetDay.appendChild(card);
+
+        // Toggle dropdown on click
+        card.querySelector('.subject-header').addEventListener('click', () => {
+          card.classList.toggle('active');
+        });
+      }
+    });
+  }
+
+  loadSchedule();
+</script>
+
 </body>
 </html>
