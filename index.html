@@ -4,208 +4,227 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BSIT 2A-G2 Midterm Week Schedule</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-      color: #fff;
-      overflow-y: auto; /* allow scrolling */
+  <link rel="icon" href="favicon.ico">
+ <style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    color: #fff;
+    overflow-y: auto;
 
-      /* Background image */
-      background: url("https://scontent.fcrk1-2.fna.fbcdn.net/v/t1.15752-9/494575577_1369841707602265_6420357234904583385_n.png?_nc_cat=108&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeFMksRVd-Url-IlIbiwYg3z46fh5fv9h47jp-Hl-_2HjvrxNyrRyHfxfmH2Wu5ge3TsaniDAdIFJyGjy2kGKEqc&_nc_ohc=cmKI2avQzEUQ7kNvwGdmA0H&_nc_oc=AdkBeASp9zEeGQ0gdMrJ62B3hQjgN6pDzSLOTgi-QsVecq45K3BdKZgX251IcdPGnFY&_nc_zt=23&_nc_ht=scontent.fcrk1-2.fna&oh=03_Q7cD3QFg2w8WuUvS7y0lbAXWW0S0WJGdQOz-yemR-dCip7jG9g&oe=68EB66EB") no-repeat center center fixed;
-      background-size: cover;
-    }
+    /* Background image */
+    background: url("https://scontent.fcrk1-2.fna.fbcdn.net/v/t1.15752-9/494575577_1369841707602265_6420357234904583385_n.png?_nc_cat=108&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeFMksRVd-Url-IlIbiwYg3z46fh5fv9h47jp-Hl-_2HjvrxNyrRyHfxfmH2Wu5ge3TsaniDAdIFJyGjy2kGKEqc&_nc_ohc=cmKI2avQzEUQ7kNvwGdmA0H&_nc_oc=AdkBeASp9zEeGQ0gdMrJ62B3hQjgN6pDzSLOTgi-QsVecq45K3BdKZgX251IcdPGnFY&_nc_zt=23&_nc_ht=scontent.fcrk1-2.fna&oh=03_Q7cD3QFg2w8WuUvS7y0lbAXWW0S0WJGdQOz-yemR-dCip7jG9g&oe=68EB66EB") no-repeat center center fixed;
+    background-size: cover;
+  }
 
-    /* Add a blur overlay */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.35);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      z-index: 0;
-    }
+  /* Add a blur overlay */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 0;
+  }
 
-    /* Page title */
-    .page-title {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      font-size: clamp(1.5rem, 2.5vw, 2.2rem);
-      font-weight: bold;
-      margin: 30px 0; /* spacing above */
-      letter-spacing: 1px;
-      padding: 12px 25px;
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      backdrop-filter: blur(12px) saturate(180%);
-      -webkit-backdrop-filter: blur(12px) saturate(180%);
-      color: #fff;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
-      max-width: 90%;
-    }
+  /* Page title */
+  .page-title {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    font-size: clamp(1.4rem, 2vw, 2rem);
+    font-weight: bold;
+    margin: 20px 0 30px;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    max-width: 90%;
+  }
 
-    /* Wrapper to center schedule + title together */
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      z-index: 1;
-    }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    z-index: 1;
+  }
 
-    .schedule {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-      width: 100%;
-      max-width: 1400px;
-    }
+  /* Weeks row layout */
+  .week-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 25px;
+    margin-bottom: 50px;
+    width: 100%;
+    max-width: 1300px;
+  }
 
-    .day {
-      background: rgba(255, 255, 255, 0.12);
-      border-radius: 20px;
-      padding: 20px;
-      backdrop-filter: blur(15px) saturate(180%);
-      -webkit-backdrop-filter: blur(15px) saturate(180%);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
+  /* Day containers */
+  .day {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    padding: 16px;
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* space between subject cards */
+    align-items: stretch;
+  }
 
-    .day h2 {
-      text-align: center;
-      font-size: 1.2rem;
-      margin: 0 0 10px 0;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
+  .day h2 {
+    text-align: center;
+    font-size: 1rem;
+    margin: 0 0 8px 0;
+    font-weight: bold;
+    color: white;
+  }
 
-    .subject-card {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      overflow: hidden;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      cursor: pointer;
-    }
+  /* Subject card styling */
+  .subject-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+    margin-bottom: 8px; /* extra spacing between stacked cards */
+  }
 
-    .subject-card:hover {
-      transform: scale(1.02);
-      box-shadow: 0 8px 25px rgba(255, 165, 0, 0.4);
-    }
+  .subject-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 22px rgba(255, 165, 0, 0.4);
+  }
 
-    /* Header (always visible) */
-    .subject-header {
-      padding: 12px;
-      font-size: 1rem;
-      font-weight: bold;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(255, 255, 255, 0.12);
-    }
+  .subject-header {
+    padding: 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.15);
+  }
 
-    /* Content (hidden until expanded) */
-    .subject-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s ease, padding 0.35s ease;
-      padding: 0 12px;
-    }
+  .subject-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    padding: 0 10px;
+    font-size: 0.8rem;
+  }
 
-    .subject-card.active .subject-content {
-      max-height: 500px; /* large enough for content */
-      padding: 12px;
-    }
+  .subject-card.active .subject-content {
+    max-height: 500px;
+    padding: 10px;
+  }
 
-    .datetime, .course {
-      font-size: 0.85rem;
-      margin-bottom: 3px;
-      opacity: 0.9;
-    }
+  .datetime, .course {
+    font-size: 0.8rem;
+    margin-bottom: 3px;
+    opacity: 0.9;
+  }
 
-    .coverage {
-      font-size: 0.8rem;
-      opacity: 0.85;
-      line-height: 1.3;
-    }
+  .coverage {
+    font-size: 0.8rem;
+    opacity: 0.85;
+    line-height: 1.4;
+  }
 
-    /* Smart Chip style button */
-    .chip-link {
-      display: inline-block;
-      padding: 4px 10px;
-      margin-left: 8px;
-      background: rgba(255, 165, 0, 0.2);
-      border: 1px solid rgba(255, 165, 0, 0.6);
-      border-radius: 16px;
-      font-size: 0.75rem;
-      color: #ffa500;
-      text-decoration: none;
-      transition: all 0.2s ease-in-out;
-    }
+  /* Smart chip style */
+  .chip-link {
+    padding: 3px 8px;
+    margin-left: 6px;
+    background: rgba(255, 165, 0, 0.2);
+    border: 1px solid rgba(255, 165, 0, 0.6);
+    border-radius: 16px;
+    font-size: 0.7rem;
+    color: #ffa500;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+  }
 
-    .chip-link:hover {
-      background: rgba(255, 165, 0, 0.35);
-      border-color: #ffa500;
-      color: #fff;
-    }
+  .chip-link:hover {
+    background: rgba(255, 165, 0, 0.35);
+    border-color: #ffa500;
+    color: #fff;
+  }
 
-    /* Responsive text */
-    @media (max-width: 600px) {
-      .day h2 {
-        font-size: 1rem;
-      }
-      .subject-header {
-        font-size: 0.95rem;
-      }
-      .coverage {
-        font-size: 0.75rem;
-      }
-    }
-
+  /* Responsive layout */
+  @media (max-width: 1000px) {
     .week-row {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 20px;
-      margin-bottom: 40px; /* space between weeks */
+      grid-template-columns: repeat(2, 1fr);
     }
+  }
 
-    .day {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 15px;
-      border-radius: 12px;
-      backdrop-filter: blur(10px);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+  @media (max-width: 600px) {
+    .week-row {
+      grid-template-columns: 1fr;
     }
-
-    .day:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-
     .day h2 {
-      font-size: 16px;
-      margin-bottom: 10px;
-      color: white;
-      text-align: center;
+      font-size: 0.9rem;
     }
+    .subject-header {
+      font-size: 0.85rem;
+    }
+    .coverage {
+      font-size: 0.75rem;
+    }
+  }
 
-  </style>
+  /* Type badge (quiz/exam) */
+.type-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 12px;
+}
+
+.type-badge .circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+/* Quiz = red */
+.type-quiz .circle {
+  background: #ff4d4d;
+}
+.type-quiz {
+  color: #ff4d4d;
+}
+
+/* Exam = orange */
+.type-exam .circle {
+  background: #ffa500;
+}
+.type-exam {
+  color: #ffa500;
+}
+
+</style>
+
+
 </head>
 <body>
   <div class="container">
@@ -254,7 +273,7 @@
     const response = await fetch(sheetUrl);
     const data = await response.text();
 
-    // Parse CSV
+    // Parse TSV
     const rows = data.trim().split("\n").map(r => r.split("\t"));
     const headers = rows.shift();
 
@@ -286,6 +305,9 @@
       const course = activity[headers.indexOf("Course")]?.trim();
       const coverage = activity[headers.indexOf("Coverage")]?.trim();
       const materials = activity[headers.indexOf("Materials Link")]?.trim();
+      // Find header index safely
+      const typeIndex = headers.findIndex(h => h.trim().toLowerCase() === "type");
+      const type = typeIndex !== -1 ? activity[typeIndex]?.trim().toLowerCase() : "";
 
       const targetDay = document.querySelector(`.day[data-date="${date}"]`);
 
@@ -293,21 +315,35 @@
         const card = document.createElement("div");
         card.className = "subject-card";
 
+        // Type badge
+        let typeBadge = "";
+        if (type === "quiz") {
+          typeBadge = `<div class="type-badge type-quiz"><span class="circle"></span>Quiz</div>`;
+        } else if (type === "exam") {
+          typeBadge = `<div class="type-badge type-exam"><span class="circle"></span>Exam</div>`;
+        }
+
         card.innerHTML = `
           <div class="subject-header">
-            ${subject} ${desc ? `| ${desc}` : ""}
-            ${materials ? `<a href="${materials}" target="_blank" class="chip-link">Materials</a>` : ""}
+            <span>${subject} ${desc ? `| ${desc}` : ""}</span>
+            ${typeBadge}
           </div>
           <div class="subject-content">
             <div class="datetime">${date} | ${time}</div>
             <div class="course">${course}</div>
-            <div class="coverage"><br>${coverage.replace(/;/g,"<br>")}</div>
+            <div class="coverage">
+              <br>
+              <ul>
+                ${coverage.split(";").map(item => `<li>${item.trim()}</li>`).join("")}
+              </ul>
+            </div>
+            ${materials ? `<div style="margin-top:10px;"><a href="${materials}" target="_blank" class="chip-link">Materials</a></div>` : ""}
           </div>
         `;
 
         targetDay.appendChild(card);
 
-        // Toggle dropdown on click
+        // Toggle dropdown
         card.querySelector('.subject-header').addEventListener('click', () => {
           card.classList.toggle('active');
         });
@@ -318,6 +354,7 @@
   loadSchedule();
 </script>
 
+
+
 </body>
 </html>
-
